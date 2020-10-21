@@ -1,6 +1,7 @@
 plocha = ["  " for i in range(9)]
-oddelovac = 12 * '-'
-oddelovac2 = 50 * '='
+ODDELOVAC = 12 * '-'
+ODDELOVAC2 = 50 * '='
+
 
 print('''
 Welcome to Tic Tac Toe
@@ -13,30 +14,33 @@ The WINNER is who succeeds in placing three of their marks in a
 Let's start the game
 ''')
 
+
+# definice pro zobrazeni plochy
 def zobrezena_plocha():
     radek1 = f'{plocha[0]} | {plocha[1]} | {plocha[2]}'
     radek2 = f'{plocha[3]} | {plocha[4]} | {plocha[5]}'
     radek3 = f'{plocha[6]} | {plocha[7]} | {plocha[8]}'
 
-    print(oddelovac)
+    print(ODDELOVAC)
     print(radek1)
-    print(oddelovac)
+    print(ODDELOVAC)
     print(radek2)
-    print(oddelovac)
+    print(ODDELOVAC)
     print(radek3)
-    print(oddelovac)
+    print(ODDELOVAC)
 
 
+# definice pro zadani pohybu hrace po plose
 def pohyb(znak):
     if znak == "X":
         num = 'X'
     elif znak == "O":
         num = '0'
 
-    print(oddelovac2)
+    print(ODDELOVAC2)
     choice = int(input(f'Player {num} | Please enter your move {num} (1-9): ').strip())
-    print(oddelovac2)
-    print(oddelovac2)
+    print(ODDELOVAC2)
+    print(ODDELOVAC2)
     if plocha[choice - 1] == "  ":
         plocha[choice - 1] = znak
     else:
@@ -44,6 +48,7 @@ def pohyb(znak):
         print("Position occupied!")
 
 
+# definice všech možných varinat pro výhru
 def vyhra(znak):
     if (plocha[0] == znak and plocha[1] == znak and plocha[2] == znak) or \
             (plocha[3] == znak and plocha[4] == znak and plocha[5] == znak) or \
@@ -58,6 +63,7 @@ def vyhra(znak):
         return False
 
 
+# definice pro remizu
 def remiza():
     if "  " not in plocha:
         return True
