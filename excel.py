@@ -7,8 +7,9 @@ ws = wb['Test Scripts']
 #print(wb['Test Scripts'])
 
 for row in range(2, 11):
-    for col in range(1, 6):
+    for col in range(1, 2):
         char = get_column_letter(col)
+        #print(type(ws))
         if ws[char + str(row)].value != None:
         #print(char)
             print(ws[char + str(row)].value)
