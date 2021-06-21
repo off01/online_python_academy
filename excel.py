@@ -6,7 +6,9 @@ ws = wb['Test Scripts']
 
 #print(wb['Test Scripts'])
 
-for row in range(1, 11):
-    for col in range(1, 5):
+for row in range(2, 11):
+    for col in range(1, 6):
         char = get_column_letter(col)
-        print(ws[char + str(row)].value)
+        if ws[char + str(row)].value != None:
+        #print(char)
+            print(ws[char + str(row)].value)
